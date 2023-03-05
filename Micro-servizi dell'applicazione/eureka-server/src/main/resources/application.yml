@@ -1,0 +1,17 @@
+server:
+  port: 8761
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+
+spring:
+  application:
+    name: service-discovery
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false

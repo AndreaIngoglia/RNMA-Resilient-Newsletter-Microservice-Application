@@ -1,0 +1,37 @@
+server:
+  port: 8081
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+
+spring:
+  application:
+    name: user-manager
+
+  datasource:
+    url: jdbc:h2:mem:user-manager-db
+    driverClassName: org.h2.Driver
+    username: dev
+    password: devPassword
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+
+resilience4j.ratelimiter:
+  instances:
+    rateLimiterUserManager:
+      limitForPeriod: 10
+      limitRefreshPeriod: 1m
+      timeoutDuration: 0
+      registerHealthIndicator: true
+      eventConsumerBufferSize: 100

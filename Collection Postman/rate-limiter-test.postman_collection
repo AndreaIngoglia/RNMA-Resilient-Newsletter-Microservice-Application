@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "d4266136-f852-42bf-8032-e4c667737dda",
+		"name": "Rate Limiter Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST members/{email}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"associate\",\r\n    \"surname\":\"associate\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/members/andreaingoglia6@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"members",
+						"andreaingoglia6@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE members/{email}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "confirmationKey",
+						"value": "YES",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/members/andreaingoglia6@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"members",
+						"andreaingoglia6@gmail.com"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

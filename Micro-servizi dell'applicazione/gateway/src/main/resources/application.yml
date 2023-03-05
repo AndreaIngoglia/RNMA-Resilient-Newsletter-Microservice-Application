@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: USER-MANAGER
+          uri: lb://USER-MANAGER
+          predicates:
+            - Path=/members/** , /timeout
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: userManagerCircuitBreaker
+                fallbackUri: forward:/fallback
+                statusCodes:
+                  - 500
+                  - 503
+                  - 504

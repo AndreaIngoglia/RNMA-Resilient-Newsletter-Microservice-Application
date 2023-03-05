@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "392e1b17-af34-4556-a53b-86c8efefb5d3",
+		"name": "member-manager-services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20196117"
+	},
+	"item": [
+		{
+			"name": "POST members/{email}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"associate\",\r\n    \"surname\":\"associate\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/members/andreaingoglia6@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"members",
+						"andreaingoglia6@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE members/{email}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "confirmationKey",
+						"value": "YES",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/members/andreaingoglia6@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"members",
+						"andreaingoglia6@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT members/{email}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "safekey",
+						"value": "pollo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"andrea\",\r\n    \"surname\":\"ingoglia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/members/andreaingoglia6@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"members",
+						"andreaingoglia6@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /timeout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/timeout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"timeout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /members",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/members",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"members"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST send/{email}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"confirmationUrl\" : \"blabla\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/send/andreaingoglia6@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"send",
+						"andreaingoglia6@gmail.com"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
